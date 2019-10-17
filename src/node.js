@@ -27,12 +27,12 @@ class Node {
 			this.left.parent = null;
 			this.left = null;
 		}
-		else throw new ErrorEvent("Passed node it's not a child");
+		else throw new Error("Passed node it's not a child");
 	}
 
 	remove() {
 		if (this.parent != null) {
-			this.parent.removeChild.call(this.parent, this)
+			this.parent.removeChild(this);
 		}
 	}
 
@@ -57,7 +57,7 @@ class Node {
 				this.right = this.left.right;
 				if (this.right != null) this.right.parent = this;
 				this.left.right = buf;
-				if (this.left.right != null) this.left.right.parent = this.left.right;
+				if (this.left.right != null) this.left.right.parent = this.left;
 			}
 			else if (this.parent.right == this) {
 				this.parent.right = this.right;
@@ -69,7 +69,7 @@ class Node {
 				this.left = this.right.left;
 				if (this.left != null) this.left.parent = this;
 				this.right.left = buf;
-				if (this.right.left != null) this.right.left.parent = this.right.left;
+				if (this.right.left != null) this.right.left.parent = this.right;
 			}
 		}
 	}

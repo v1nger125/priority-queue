@@ -423,7 +423,6 @@ describe('MaxHeap', () => {
             h.root.left.appendChild(new Node(8, 8));
             h.root.right.appendChild(new Node(11, 11));
             h.root.right.appendChild(new Node(6, 6));
-
             h.parentNodes = [h.root.left.left, h.root.left.right, h.root.right.left, h.root.right.right];
 
 /**
